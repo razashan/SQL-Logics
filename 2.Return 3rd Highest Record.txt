@@ -1,0 +1,9 @@
+-- This query returns the 3rd highest amount of the customer paid
+
+SELECT *
+from payment
+group by customer_id
+order by sum(amount) desc
+limit 1
+offset 2
+
