@@ -1,0 +1,6 @@
+-- This query returns the records of Last 4 Months + also the N Days of Current Month
+
+
+select * 
+from customer 
+WHERE  create_date >= last_day(now()) + interval 1 day - interval 4 month
