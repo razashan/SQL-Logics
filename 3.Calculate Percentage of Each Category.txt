@@ -1,0 +1,6 @@
+select sourcelanguagecode, COUNT(sourcelanguagecode) as source_language,
+COUNT(*)*100.0/sum(COUNT(*)) over()   as percentage_of_language
+from base 
+GROUP by sourcelanguagecode
+order by percentage_of_language desc
+limit 1 
