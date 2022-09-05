@@ -1,0 +1,5 @@
+This query will return the customers who came recently and were not our previous customers
+
+select * 
+from payment
+where customer_id not in (select customer_id from payment where payment_date <'2006-01-01')
