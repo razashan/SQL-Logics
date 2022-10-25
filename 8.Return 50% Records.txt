@@ -1,0 +1,6 @@
+set @row_number :=0;
+set @count := (select count(*) from actor);
+select * from (
+select *,@row_number :=@row_number +1 as abc
+from actor
+) a where abc<@count/2;
